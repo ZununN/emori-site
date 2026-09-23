@@ -1,0 +1,33 @@
+<title>Emori</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap');
+  :root{ --bg:#ffffff; --text:#16181c; --muted:#5b6470; --border:#dfe3e8; --accent:#0088cc; --accent-soft:#e5f4fb; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#000000; --text:#f2f3f5; --muted:#9aa3ad; --border:#38383a; --accent:#34a9e8; --accent-soft:#0b2d3d; }
+  }
+  :root[data-theme="dark"]{ --bg:#000000; --text:#f2f3f5; --muted:#9aa3ad; --border:#38383a; --accent:#34a9e8; --accent-soft:#0b2d3d; }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:"Source Serif 4", Georgia, serif; }
+  main{ max-width:520px; margin:0 auto; padding:15vh 24px 40px; }
+  .mark{ display:flex; align-items:center; gap:10px; font-family:"Manrope",sans-serif; font-weight:800; font-size:15px; margin-bottom:28px; }
+  .mark-dot{ width:10px; height:10px; border-radius:50%; background:var(--accent); }
+  h1{ font-family:"Manrope",sans-serif; font-weight:800; font-size:clamp(26px,5vw,34px); line-height:1.2; margin:0 0 12px; text-wrap:balance; }
+  p{ color:var(--muted); font-size:17px; line-height:1.6; margin:0 0 28px; }
+  .links{ display:flex; flex-direction:column; gap:10px; }
+  .links a{
+    display:flex; align-items:center; justify-content:space-between;
+    border:1px solid var(--border); border-radius:12px; padding:14px 18px;
+    color:var(--text); text-decoration:none; font-family:"Manrope",sans-serif; font-weight:700; font-size:15px;
+  }
+  .links a:hover{ background:var(--accent-soft); border-color:var(--accent); }
+  .links a span.arrow{ color:var(--accent); }
+</style>
+<main>
+  <div class="mark"><span class="mark-dot"></span>Emori</div>
+  <h1>Privacy policy &amp; support</h1>
+  <p>Public pages for the Emori mood diary app (App Store &amp; Google Play), Android and iOS.</p>
+  <div class="links">
+    <a href="privacy-policy.html">Privacy Policy <span class="arrow">&rarr;</span></a>
+    <a href="support.html">Support <span class="arrow">&rarr;</span></a>
+  </div>
+</main>

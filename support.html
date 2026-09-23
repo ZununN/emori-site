@@ -1,0 +1,304 @@
+<title>Emori Support</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
+
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f8fa;
+    --text: #16181c;
+    --muted: #5b6470;
+    --border: #dfe3e8;
+    --accent: #0088cc;
+    --accent-soft: #e5f4fb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #000000;
+      --surface: #1c1c1e;
+      --text: #f2f3f5;
+      --muted: #9aa3ad;
+      --border: #38383a;
+      --accent: #34a9e8;
+      --accent-soft: #0b2d3d;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #000000;
+    --surface: #1c1c1e;
+    --text: #f2f3f5;
+    --muted: #9aa3ad;
+    --border: #38383a;
+    --accent: #34a9e8;
+    --accent-soft: #0b2d3d;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .mark-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+    font-family: "Manrope", sans-serif;
+  }
+
+  .lang-toggle button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .lang-toggle button[aria-pressed="true"] { background: var(--accent); color: #ffffff; }
+
+  main { max-width: 640px; margin: 0 auto; padding: 56px 24px 96px; }
+
+  .eyebrow {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  p.lead { color: var(--muted); font-size: 18px; margin: 0 0 40px; }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .contact-card .k { font-family: "Manrope", sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .contact-card a { font-family: "Manrope", sans-serif; font-size: 17px; font-weight: 700; color: var(--accent); text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  h2 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.005em;
+    margin: 28px 0 8px;
+  }
+
+  details {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 0 0 10px;
+    padding: 14px 18px;
+  }
+
+  details summary {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  details summary::-webkit-details-marker { display: none; }
+
+  details summary::after {
+    content: "+";
+    float: right;
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+  details[open] summary::after { content: "\2212"; }
+
+  details p { margin: 10px 0 0; color: var(--text); }
+
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  footer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); }
+
+  [data-lang-block] { display: none; }
+  [data-lang-block].active { display: block; }
+</style>
+
+<div class="topbar">
+  <span class="mark"><span class="mark-dot"></span>Emori</span>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+</div>
+
+<main>
+  <div data-lang-block data-lang="en" class="active">
+    <p class="eyebrow">Support</p>
+    <h1>Emori Support</h1>
+    <p class="lead">Questions, bug reports, feature requests — all of it goes to the same place.</p>
+
+    <div class="contact-card">
+      <span class="k">Email</span>
+      <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a>
+    </div>
+
+    <h2>Common questions</h2>
+
+    <details>
+      <summary>How do I back up my journal?</summary>
+      <p><strong>iOS:</strong> open Emori's settings and export your journal to a file, then save it wherever you like through the share sheet (iCloud Drive, another app, AirDrop).<br><strong>Android:</strong> turn on backup in settings and sign in with Google — the copy goes to a private app‑only folder in your Drive.</p>
+    </details>
+
+    <details>
+      <summary>I forgot my PIN — can you reset it?</summary>
+      <p>Emori has no account and no server, so there's no remote way to reset a PIN. If you have an exported backup file, reinstalling the app and restoring from it gets you back in. Without a backup, the PIN can't be recovered and the local data is lost if you have to reinstall.</p>
+    </details>
+
+    <details>
+      <summary>Reminders aren't showing up</summary>
+      <p>Check that notifications are allowed for Emori in your device's system settings, and that the reminder time doesn't fall inside your configured quiet hours.</p>
+    </details>
+
+    <details>
+      <summary>Is my data private?</summary>
+      <p>Yes — everything stays on your device unless you choose to export or back it up yourself. See the <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+    </details>
+
+    <details>
+      <summary>I have a bug report or feature idea</summary>
+      <p>Email <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a> with as much detail as you can — device model, OS version, and what you were doing when it happened, if it's a bug.</p>
+    </details>
+  </div>
+
+  <div data-lang-block data-lang="ru">
+    <p class="eyebrow">Поддержка</p>
+    <h1>Поддержка Emori</h1>
+    <p class="lead">Вопросы, сообщения об ошибках, пожелания по функциям — всё сюда.</p>
+
+    <div class="contact-card">
+      <span class="k">Почта</span>
+      <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a>
+    </div>
+
+    <h2>Частые вопросы</h2>
+
+    <details>
+      <summary>Как сделать резервную копию дневника?</summary>
+      <p><strong>iOS:</strong> в настройках Emori выгрузите дневник в файл и сохраните его через меню «Поделиться» — в iCloud Drive, другое приложение или AirDrop.<br><strong>Android:</strong> включите резервное копирование в настройках и войдите через Google — копия попадёт в приватную папку вашего Диска, доступную только приложению.</p>
+    </details>
+
+    <details>
+      <summary>Забыл PIN-код — можно его сбросить?</summary>
+      <p>У Emori нет аккаунта и сервера, поэтому удалённо сбросить PIN нельзя. Если есть файл резервной копии — переустановите приложение и восстановите из него. Без резервной копии PIN не восстановить, а локальные данные будут потеряны при переустановке.</p>
+    </details>
+
+    <details>
+      <summary>Не приходят напоминания</summary>
+      <p>Проверьте, что уведомления для Emori разрешены в системных настройках устройства, и что время напоминания не попадает в настроенные тихие часы.</p>
+    </details>
+
+    <details>
+      <summary>Мои данные точно приватны?</summary>
+      <p>Да — всё остаётся на устройстве, если вы сами не решите выгрузить или сохранить резервную копию. Подробности — в <a href="privacy-policy.html">политике конфиденциальности</a>.</p>
+    </details>
+
+    <details>
+      <summary>Хочу сообщить об ошибке или предложить функцию</summary>
+      <p>Напишите на <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a> — для ошибки укажите модель устройства, версию ОС и что вы делали, когда она произошла.</p>
+    </details>
+  </div>
+</main>
+
+<footer>
+  <p>Emori · <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a></p>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-toggle button');
+    var blocks = document.querySelectorAll('[data-lang-block]');
+
+    function setLang(lang) { blocks.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+      document.documentElement.setAttribute('lang', lang);
+      try { localStorage.setItem('emori-privacy-lang', lang); } catch (e) {}
+    }
+
+    buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); }); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('emori-privacy-lang'); } catch (e) {}
+    if (saved === 'en' || saved === 'ru') {
+      setLang(saved);
+    } else if ((navigator.language || '').toLowerCase().indexOf('ru') === 0) {
+      setLang('ru');
+    }
+  })();
+</script>

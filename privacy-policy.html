@@ -1,0 +1,487 @@
+<title>Emori Privacy Policy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
+
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f8fa;
+    --text: #16181c;
+    --muted: #5b6470;
+    --border: #dfe3e8;
+    --accent: #0088cc;
+    --accent-soft: #e5f4fb;
+    --code-bg: #eef2f5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #000000;
+      --surface: #1c1c1e;
+      --text: #f2f3f5;
+      --muted: #9aa3ad;
+      --border: #38383a;
+      --accent: #34a9e8;
+      --accent-soft: #0b2d3d;
+      --code-bg: #232326;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #000000;
+    --surface: #1c1c1e;
+    --text: #f2f3f5;
+    --muted: #9aa3ad;
+    --border: #38383a;
+    --accent: #34a9e8;
+    --accent-soft: #0b2d3d;
+    --code-bg: #232326;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .mark-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+
+  .toggle-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+    font-family: "Manrope", sans-serif;
+  }
+
+  .lang-toggle button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .lang-toggle button[aria-pressed="true"] {
+    background: var(--accent);
+    color: #ffffff;
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  .eyebrow {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  .meta {
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 40px;
+  }
+
+  h2 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.005em;
+    margin: 44px 0 14px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    text-wrap: balance;
+  }
+
+  section:first-of-type h2:first-child { border-top: none; padding-top: 0; }
+
+  h3 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+    margin: 24px 0 8px;
+  }
+
+  p { margin: 0 0 14px; color: var(--text); }
+  p.lead { color: var(--muted); font-size: 18px; }
+
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin: 0 0 8px; }
+
+  strong { font-weight: 600; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 18px 0;
+  }
+
+  .card h3 { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .platform-row { display: flex; flex-direction: column; gap: 14px; }
+
+  .platform-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+
+  .platform-card .tag {
+    display: inline-block;
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+
+  .platform-card p:last-child { margin-bottom: 0; }
+
+  .scope {
+    display: inline-block;
+    font-family: "Manrope", monospace;
+    font-size: 12.5px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-weight: 700;
+  }
+
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer a { color: var(--muted); }
+
+  [data-lang-block] { display: none; }
+  [data-lang-block].active { display: block; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    main { animation: rise 0.4s ease-out; }
+    @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+
+<div class="topbar">
+  <span class="mark"><span class="mark-dot"></span>Emori</span>
+  <div class="toggle-group">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div data-lang-block data-lang="en" class="active">
+    <p class="eyebrow">Legal</p>
+    <h1>Emori Privacy Policy</h1>
+    <p class="meta">Effective September 23, 2026 · Applies to Emori on Android and iOS (<code>kz.mind.emori</code>)</p>
+
+    <p class="lead">Emori is a personal mood‑journaling app. This page explains, in plain language, what data the app handles, where it lives, and who can see it — on both Android and iOS.</p>
+
+    <section>
+      <h2>The short version</h2>
+      <ul>
+        <li>Your journal entries stay on your device, in the app's own storage.</li>
+        <li>App‑lock uses your phone's fingerprint or face unlock — Emori never sees or stores that biometric data.</li>
+        <li>Backup is optional and works differently per platform: on Android, a copy can be saved to a private, app‑only folder in your own Google Drive; on iOS, you export a single file yourself and choose where it goes. Emori never uploads anything on its own.</li>
+        <li>On Android, crash and usage reports go to Firebase (Google) so bugs can be found and fixed — they don't include your journal content. The iOS app currently sends no diagnostics anywhere.</li>
+        <li>There are no ads and no sale of your data, on either platform.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data stored on your device</h2>
+      <p>Everything you enter — mood ratings, custom feelings and their colors, notes, dates, and reminder times — is saved in a local database inside the app. It is not sent to us or to any server we operate. Uninstalling the app or clearing its storage permanently deletes this data, unless you've made a backup as described below.</p>
+    </section>
+
+    <section>
+      <h2>App lock (biometric unlock)</h2>
+      <p>If you enable app lock, Emori asks your device's own biometric prompt — the fingerprint or face unlock built into Android, or Face ID / Touch ID on iOS — to confirm it's you. This is handled entirely by your device's operating system: Emori only receives a yes/no result and never has access to the biometric data itself.</p>
+    </section>
+
+    <section>
+      <h2>Backup and transfer</h2>
+      <div class="platform-row">
+        <div class="platform-card">
+          <span class="tag">Android</span>
+          <h3>What gets accessed: <span class="scope">drive.appdata</span></h3>
+          <p>When you choose to back up, Emori asks you to sign in with Google and requests the <strong>Drive app‑data</strong> scope — a hidden, application‑specific folder that regular Drive apps and your own Drive file list cannot see. Emori can only read and write its own backup file in that folder; it cannot see, list, or touch anything else in your Drive. You can delete the backup at any time from Emori's settings, or by revoking Emori's access from your Google Account's <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">third‑party access settings</a>, which also deletes the app‑data folder.</p>
+        </div>
+        <div class="platform-card">
+          <span class="tag">iOS</span>
+          <p>There is no account sign‑in and no automatic cloud backup. Emori exports your whole journal to a single file through the system share sheet, and you choose where it goes — iCloud Drive, another app, AirDrop, or anywhere else you pick. Emori has no access to that file once it leaves the share sheet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reminders and notifications</h2>
+      <p>Reminder times you set are stored locally and used to schedule notifications on your device through the operating system's own scheduling — Android's alarm system or iOS notifications. This never leaves your phone.</p>
+    </section>
+
+    <section>
+      <h2>Diagnostics and analytics</h2>
+      <div class="platform-row">
+        <div class="platform-card">
+          <span class="tag">Android</span>
+          <p>Emori uses <strong>Firebase Crashlytics</strong> and <strong>Firebase Analytics</strong> (both provided by Google) to catch bugs and understand which features are used. These collect technical information such as device model, OS version, app version, crash logs, and anonymized in‑app events. This data is <strong>not</strong> linked to your journal entries or feelings data, and is handled under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+        </div>
+        <div class="platform-card">
+          <span class="tag">iOS</span>
+          <p>The iOS app does not currently send crash or usage data anywhere — there is no analytics or crash‑reporting service wired up. If that changes in a future version, this policy will be updated first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Emori doesn't do</h2>
+      <ul>
+        <li>No advertising or ad‑tracking SDKs.</li>
+        <li>No selling or renting of your data to anyone.</li>
+        <li>No account or sign‑in is required, except optionally for Google Drive backup on Android.</li>
+        <li>No remote server that stores or reads your journal entries.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Your choices</h2>
+      <ul>
+        <li>Notification permissions can be granted or revoked any time in your device's system settings.</li>
+        <li>On Android, backup can be turned off and existing backups deleted from Emori's settings.</li>
+        <li>All local data is removed by uninstalling the app or clearing its storage.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Children's privacy</h2>
+      <p>Emori is not directed at children under 13 and does not knowingly collect personal data from them.</p>
+    </section>
+
+    <section>
+      <h2>Changes to this policy</h2>
+      <p>If this policy changes, the updated version will be published at this same address with a new effective date above.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about this policy or your data can be sent to <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a>.</p>
+    </section>
+  </div>
+
+  <div data-lang-block data-lang="ru">
+    <p class="eyebrow">Юридическая информация</p>
+    <h1>Политика конфиденциальности Emori</h1>
+    <p class="meta">Действует с 23 сентября 2026 г. · Относится к Emori на Android и iOS (<code>kz.mind.emori</code>)</p>
+
+    <p class="lead">Emori — приложение для личного дневника настроения. Здесь простыми словами объясняется, какие данные обрабатывает приложение, где они хранятся и кто может их увидеть — на Android и на iOS.</p>
+
+    <section>
+      <h2>Коротко</h2>
+      <ul>
+        <li>Записи дневника остаются на вашем устройстве, во внутреннем хранилище приложения.</li>
+        <li>Блокировка приложения использует отпечаток пальца или Face ID телефона — Emori никогда не получает и не хранит эти биометрические данные.</li>
+        <li>Резервное копирование не обязательно и работает по-разному: на Android копию можно сохранить в приватную папку вашего Google Диска, доступную только приложению; на iOS вы сами экспортируете один файл и выбираете, куда его положить. Emori никогда не загружает данные сама.</li>
+        <li>На Android отчёты о сбоях и использовании отправляются в Firebase (Google), чтобы находить и исправлять ошибки — они не содержат содержимого дневника. Версия для iOS сейчас никуда не отправляет диагностику.</li>
+        <li>Рекламы и продажи данных нет ни на одной из платформ.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Данные на вашем устройстве</h2>
+      <p>Всё, что вы вводите — оценки настроения, свои чувства и их цвета, заметки, даты и время напоминаний — сохраняется в локальной базе данных внутри приложения. Эти данные не отправляются нам и не хранятся на каком‑либо нашем сервере. Удаление приложения или очистка его хранилища безвозвратно удаляет эти данные, если вы не сделали резервную копию (см. ниже).</p>
+    </section>
+
+    <section>
+      <h2>Блокировка приложения (биометрия)</h2>
+      <p>Если вы включите блокировку, Emori вызывает встроенный биометрический экран вашего устройства — отпечаток пальца или Face ID на Android, либо Face ID / Touch ID на iOS — чтобы подтвердить, что это вы. Это полностью обрабатывается операционной системой устройства: Emori получает только результат «да/нет» и никогда не имеет доступа к самим биометрическим данным.</p>
+    </section>
+
+    <section>
+      <h2>Резервная копия и перенос</h2>
+      <div class="platform-row">
+        <div class="platform-card">
+          <span class="tag">Android</span>
+          <h3>Какой доступ запрашивается: <span class="scope">drive.appdata</span></h3>
+          <p>Когда вы включаете резервное копирование, Emori предлагает войти через Google и запрашивает доступ к области <strong>drive.appdata</strong> — скрытой папке, привязанной только к приложению, которую не видно в обычном списке файлов Диска и других приложениях. Emori может читать и записывать только свой собственный файл в этой папке. Вы можете удалить копию в любой момент в настройках Emori или отозвав доступ приложения в <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">настройках стороннего доступа Google‑аккаунта</a>.</p>
+        </div>
+        <div class="platform-card">
+          <span class="tag">iOS</span>
+          <p>Входа в аккаунт и автоматической копии в облако нет. Emori выгружает весь дневник в один файл через системное меню «Поделиться», а куда его положить — решаете вы сами: iCloud Drive, другое приложение, AirDrop или что угодно ещё. После того как файл покинул меню «Поделиться», у Emori нет к нему доступа.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Напоминания и уведомления</h2>
+      <p>Заданное вами время напоминаний хранится локально и используется, чтобы поставить уведомление средствами самой операционной системы — будильниками Android или уведомлениями iOS. Эти данные никогда не покидают телефон.</p>
+    </section>
+
+    <section>
+      <h2>Диагностика и аналитика</h2>
+      <div class="platform-row">
+        <div class="platform-card">
+          <span class="tag">Android</span>
+          <p>Emori использует <strong>Firebase Crashlytics</strong> и <strong>Firebase Analytics</strong> (сервисы Google) для поиска ошибок и понимания того, какие функции востребованы. Они собирают техническую информацию: модель устройства, версию ОС, версию приложения, журналы сбоев и обезличенные события использования. Эти данные <strong>не связаны</strong> с записями дневника и обрабатываются согласно <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">политике конфиденциальности Google</a>.</p>
+        </div>
+        <div class="platform-card">
+          <span class="tag">iOS</span>
+          <p>Версия для iOS сейчас никуда не отправляет данные о сбоях или использовании — сервис аналитики или диагностики не подключён. Если это изменится в будущей версии, эта политика будет обновлена заранее.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Чего Emori не делает</h2>
+      <ul>
+        <li>Не показывает рекламу и не использует рекламные SDK.</li>
+        <li>Не продаёт и не передаёт ваши данные третьим лицам.</li>
+        <li>Не требует регистрации, кроме необязательного резервного копирования на Google Диск на Android.</li>
+        <li>Не хранит и не читает записи дневника на каком‑либо удалённом сервере.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ваш выбор</h2>
+      <ul>
+        <li>Разрешения на уведомления можно выдать или отозвать в любой момент в системных настройках устройства.</li>
+        <li>На Android резервное копирование можно отключить, а существующие копии — удалить, в настройках Emori.</li>
+        <li>Все локальные данные удаляются при удалении приложения или очистке его хранилища.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Данные детей</h2>
+      <p>Emori не ориентировано на детей младше 13 лет и сознательно не собирает их персональные данные.</p>
+    </section>
+
+    <section>
+      <h2>Изменения политики</h2>
+      <p>При изменении этой политики обновлённая версия будет опубликована по этому же адресу с новой датой вступления в силу выше.</p>
+    </section>
+
+    <section>
+      <h2>Контакты</h2>
+      <p>Вопросы об этой политике или ваших данных можно направить на <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>Emori · <a href="mailto:zunun.dev@gmail.com">zunun.dev@gmail.com</a></p>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-toggle button');
+    var blocks = document.querySelectorAll('[data-lang-block]');
+
+    function setLang(lang) {
+      blocks.forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+      });
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+      });
+      document.documentElement.setAttribute('lang', lang);
+      try { localStorage.setItem('emori-privacy-lang', lang); } catch (e) {}
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem('emori-privacy-lang'); } catch (e) {}
+    if (saved === 'en' || saved === 'ru') {
+      setLang(saved);
+    } else if ((navigator.language || '').toLowerCase().indexOf('ru') === 0) {
+      setLang('ru');
+    }
+  })();
+</script>
