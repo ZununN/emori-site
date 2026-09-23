@@ -270,7 +270,7 @@
         <li>Your journal entries stay on your device, in the app's own storage.</li>
         <li>App‑lock uses your phone's fingerprint or face unlock — Emori never sees or stores that biometric data.</li>
         <li>Backup is optional and works differently per platform: on Android, a copy can be saved to a private, app‑only folder in your own Google Drive; on iOS, you export a single file yourself and choose where it goes. Emori never uploads anything on its own.</li>
-        <li>On Android, crash and usage reports go to Firebase (Google) so bugs can be found and fixed — they don't include your journal content. The iOS app currently sends no diagnostics anywhere.</li>
+        <li>Crash reports go to Firebase Crashlytics (Google) on both platforms so bugs can be found and fixed; on Android, anonymous usage events go to Firebase Analytics too. None of this includes your journal content.</li>
         <li>There are no ads and no sale of your data, on either platform.</li>
       </ul>
     </section>
@@ -314,7 +314,7 @@
         </div>
         <div class="platform-card">
           <span class="tag">iOS</span>
-          <p>The iOS app does not currently send crash or usage data anywhere — there is no analytics or crash‑reporting service wired up. If that changes in a future version, this policy will be updated first.</p>
+          <p>Emori uses <strong>Firebase Crashlytics</strong> (provided by Google) to catch bugs. When the app crashes or hits an error, a report with technical information is sent: device model, OS version, app version and the crash log. The report is <strong>not</strong> linked to your journal entries or to you, and is handled under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. The iOS app does not use Firebase Analytics or any other usage tracking.</p>
         </div>
       </div>
     </section>
@@ -367,7 +367,7 @@
         <li>Записи дневника остаются на вашем устройстве, во внутреннем хранилище приложения.</li>
         <li>Блокировка приложения использует отпечаток пальца или Face ID телефона — Emori никогда не получает и не хранит эти биометрические данные.</li>
         <li>Резервное копирование не обязательно и работает по-разному: на Android копию можно сохранить в приватную папку вашего Google Диска, доступную только приложению; на iOS вы сами экспортируете один файл и выбираете, куда его положить. Emori никогда не загружает данные сама.</li>
-        <li>На Android отчёты о сбоях и использовании отправляются в Firebase (Google), чтобы находить и исправлять ошибки — они не содержат содержимого дневника. Версия для iOS сейчас никуда не отправляет диагностику.</li>
+        <li>Отчёты о сбоях на обеих платформах отправляются в Firebase Crashlytics (Google), чтобы находить и исправлять ошибки; на Android в Firebase Analytics также уходят обезличенные события использования. Содержимого дневника в них нет.</li>
         <li>Рекламы и продажи данных нет ни на одной из платформ.</li>
       </ul>
     </section>
@@ -411,7 +411,7 @@
         </div>
         <div class="platform-card">
           <span class="tag">iOS</span>
-          <p>Версия для iOS сейчас никуда не отправляет данные о сбоях или использовании — сервис аналитики или диагностики не подключён. Если это изменится в будущей версии, эта политика будет обновлена заранее.</p>
+          <p>Emori использует <strong>Firebase Crashlytics</strong> (сервис Google) для поиска ошибок. Когда приложение падает или сталкивается с ошибкой, отправляется отчёт с технической информацией: модель устройства, версия ОС, версия приложения и журнал сбоя. Отчёт <strong>не связан</strong> с записями дневника и с вами и обрабатывается согласно <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">политике конфиденциальности Google</a>. Firebase Analytics и другое отслеживание использования в версии для iOS не применяются.</p>
         </div>
       </div>
     </section>
